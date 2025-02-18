@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import React from 'react';
+import StoreFinder from './components/StoreFinder';
+import { AppBar, Toolbar, Typography, Container, IconButton } from '@mui/material';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppBar position="static" sx={{  boxShadow: 'none' }}>
+        <Toolbar>
+          <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+            <img src="/dominos.png" alt="Domino's Logo" style={{ height: '40px' }} />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Domino's Store Finder
+          </Typography>
+          <IconButton edge="end" color="inherit" aria-label="login">
+            <AccountCircle />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Container>
+        <StoreFinder />
+      </Container>
     </div>
   );
 }
